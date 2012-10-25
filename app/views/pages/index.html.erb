@@ -1,0 +1,8 @@
+<h1>Testes com Ajax</h1>
+<p>
+  <%= form_for "teste", :url => pages_mensagem_path(:format => :js), :remote => true do |a|%>
+    <%= a.submit "Teste Ajax" %>
+  <% end %>
+  <div id="conteudo">
+  </div>
+</p>
