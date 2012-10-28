@@ -1,8 +1,24 @@
 <h1>Testes com Ajax</h1>
 <p>
   <%= form_for "teste", :url => pages_mensagem_path(:format => :js), :remote => true do |a|%>
+    Digite um numero:<br/>
+    <%= a.text_field :campo_texto, :id => :campo_texto %><br/>
     <%= a.submit "Teste Ajax" %>
   <% end %>
   <div id="conteudo">
   </div>
 </p>
+<script type="text/javascript">
+  $("#campo_texto").on("blur", function() {
+    $.ajax({
+      url: "pages/mensagem_dois",
+      type: "GET",
+      data: {
+        "linhas": $("#campo_texto").val()
+      }
+    }).done(function(data){
+      $("#conteudo").empty();
+      $("#conteudo").append(data);
+    });
+  });
+</script>
