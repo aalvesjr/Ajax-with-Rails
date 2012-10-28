@@ -1,0 +1,8 @@
+<p>
+  <% linhas = params[:linhas] if params[:linhas].to_i > 0 %>
+  <%= "<small><i>Exibindo 1 (uma) linha já que não digitou um numero valido.</i></small><br/>".html_safe unless linhas %>
+  <% linhas = linhas || 1 %>
+  <% (1..linhas.to_i).each do |n| %>
+    <%= "Linha #{n}" %><br/>
+  <% end%>
+</p>
