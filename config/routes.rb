@@ -1,6 +1,7 @@
 AjaxRails::Application.routes.draw do
   get  "pages/index"
   post "pages/mensagem"
+  get "pages/mensagem_dois"
 
   root :to => 'pages#index'
 

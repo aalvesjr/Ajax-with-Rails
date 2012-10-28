@@ -7,4 +7,7 @@ class PagesController < ApplicationController
       format.js
     end
   end
+
+  def mensagem_dois
+  end
 end
